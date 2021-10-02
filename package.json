@@ -1,0 +1,27 @@
+{
+  "name": "library-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaArt/library-express.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaArt/library-express.js/issues"
+  },
+  "homepage": "https://github.com/AnastasiaArt/library-express.js#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
