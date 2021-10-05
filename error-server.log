@@ -1,0 +1,120 @@
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+SyntaxError: Unexpected token , in JSON at position 205
+    at JSON.parse (<anonymous>)
+    at parse (/home/art/project/library-express.js/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/art/project/library-express.js/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/home/art/project/library-express.js/node_modules/raw-body/index.js:224:16)
+    at done (/home/art/project/library-express.js/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/home/art/project/library-express.js/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (events.js:314:20)
+    at endReadableNT (_stream_readable.js:1241:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+MulterError: Unexpected field
+    at wrappedFileFilter (/home/art/project/library-express.js/node_modules/multer/index.js:40:19)
+    at Busboy.<anonymous> (/home/art/project/library-express.js/node_modules/multer/lib/make-middleware.js:114:7)
+    at Busboy.emit (events.js:314:20)
+    at Busboy.emit (/home/art/project/library-express.js/node_modules/busboy/lib/main.js:38:33)
+    at PartStream.<anonymous> (/home/art/project/library-express.js/node_modules/busboy/lib/types/multipart.js:213:13)
+    at PartStream.emit (events.js:314:20)
+    at HeaderParser.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/Dicer.js:51:16)
+    at HeaderParser.emit (events.js:314:20)
+    at HeaderParser._finish (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:68:8)
+    at SBMH.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:40:12)
+MulterError: Unexpected field
+    at wrappedFileFilter (/home/art/project/library-express.js/node_modules/multer/index.js:40:19)
+    at Busboy.<anonymous> (/home/art/project/library-express.js/node_modules/multer/lib/make-middleware.js:114:7)
+    at Busboy.emit (events.js:314:20)
+    at Busboy.emit (/home/art/project/library-express.js/node_modules/busboy/lib/main.js:38:33)
+    at PartStream.<anonymous> (/home/art/project/library-express.js/node_modules/busboy/lib/types/multipart.js:213:13)
+    at PartStream.emit (events.js:314:20)
+    at HeaderParser.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/Dicer.js:51:16)
+    at HeaderParser.emit (events.js:314:20)
+    at HeaderParser._finish (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:68:8)
+    at SBMH.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:40:12)
+MulterError: Unexpected field
+    at wrappedFileFilter (/home/art/project/library-express.js/node_modules/multer/index.js:40:19)
+    at Busboy.<anonymous> (/home/art/project/library-express.js/node_modules/multer/lib/make-middleware.js:114:7)
+    at Busboy.emit (events.js:314:20)
+    at Busboy.emit (/home/art/project/library-express.js/node_modules/busboy/lib/main.js:38:33)
+    at PartStream.<anonymous> (/home/art/project/library-express.js/node_modules/busboy/lib/types/multipart.js:213:13)
+    at PartStream.emit (events.js:314:20)
+    at HeaderParser.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/Dicer.js:51:16)
+    at HeaderParser.emit (events.js:314:20)
+    at HeaderParser._finish (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:68:8)
+    at SBMH.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:40:12)
+MulterError: Unexpected field
+    at wrappedFileFilter (/home/art/project/library-express.js/node_modules/multer/index.js:40:19)
+    at Busboy.<anonymous> (/home/art/project/library-express.js/node_modules/multer/lib/make-middleware.js:114:7)
+    at Busboy.emit (events.js:314:20)
+    at Busboy.emit (/home/art/project/library-express.js/node_modules/busboy/lib/main.js:38:33)
+    at PartStream.<anonymous> (/home/art/project/library-express.js/node_modules/busboy/lib/types/multipart.js:213:13)
+    at PartStream.emit (events.js:314:20)
+    at HeaderParser.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/Dicer.js:51:16)
+    at HeaderParser.emit (events.js:314:20)
+    at HeaderParser._finish (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:68:8)
+    at SBMH.<anonymous> (/home/art/project/library-express.js/node_modules/dicer/lib/HeaderParser.js:40:12)
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+TypeError: Api401Error is not a constructor
+    at /home/art/project/library-express.js/routes/userRouter.js:25:23
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
