@@ -118,3 +118,132 @@ TypeError: Api401Error is not a constructor
     at next (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:275:10)
     at Function.handle (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:174:3)
     at router (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:47:12)
+Error: /home/art/project/library-express.js/views/index.ejs:1
+ >> 1| <%- include("../partials/layout-start", {title: title}) %>
+    2| <%- include("../partials/menu") %>
+    3| 
+    4| <div class="jumbotron jumbotron-fluid">
+
+Could not find the include file "../partials/layout-start"
+    at getIncludePath (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:183:13)
+    at includeFile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:309:19)
+    at include (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:690:16)
+    at eval (eval at compile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:662:12), <anonymous>:8:17)
+    at index (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:692:17)
+    at tryHandleCache (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:272:36)
+    at View.exports.renderFile [as engine] (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:489:10)
+    at View.render (/home/art/project/library-express.js/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/art/project/library-express.js/node_modules/express/lib/application.js:640:10)
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:592:3)
+Error: /home/art/project/library-express.js/views/index.ejs:1
+ >> 1| <%- include("../partials/layout-start", {title: title}) %>
+    2| <%- include("../partials/menu") %>
+    3| 
+    4| <div class="jumbotron jumbotron-fluid">
+
+Could not find the include file "../partials/layout-start"
+    at getIncludePath (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:183:13)
+    at includeFile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:309:19)
+    at include (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:690:16)
+    at eval (eval at compile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:662:12), <anonymous>:8:17)
+    at index (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:692:17)
+    at tryHandleCache (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:272:36)
+    at View.exports.renderFile [as engine] (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:489:10)
+    at View.render (/home/art/project/library-express.js/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/art/project/library-express.js/node_modules/express/lib/application.js:640:10)
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:592:3)
+Error: /home/art/project/library-express.js/views/index.ejs:1
+ >> 1| <%- include("../partials/layout-start", {title: title}) %>
+    2| <%- include("../partials/menu") %>
+    3| 
+    4| <div class="jumbotron jumbotron-fluid">
+
+Could not find the include file "../partials/layout-start"
+    at getIncludePath (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:183:13)
+    at includeFile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:309:19)
+    at include (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:690:16)
+    at eval (eval at compile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:662:12), <anonymous>:8:17)
+    at index (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:692:17)
+    at tryHandleCache (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:272:36)
+    at View.exports.renderFile [as engine] (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:489:10)
+    at View.render (/home/art/project/library-express.js/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/art/project/library-express.js/node_modules/express/lib/application.js:640:10)
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:592:3)
+Error: /home/art/project/library-express.js/views/index.ejs:1
+ >> 1| <%- include("../partials/layout-start", {title: title}) %>
+    2| <%- include("../partials/menu") %>
+    3| 
+    4| <div class="jumbotron jumbotron-fluid">
+
+Could not find the include file "../partials/layout-start"
+    at getIncludePath (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:183:13)
+    at includeFile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:309:19)
+    at include (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:690:16)
+    at eval (eval at compile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:662:12), <anonymous>:8:17)
+    at index (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:692:17)
+    at tryHandleCache (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:272:36)
+    at View.exports.renderFile [as engine] (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:489:10)
+    at View.render (/home/art/project/library-express.js/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/art/project/library-express.js/node_modules/express/lib/application.js:640:10)
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:592:3)
+Error: /home/art/project/library-express.js/views/index.ejs:1
+ >> 1| <%- include("../partials/layout-start", {title: title}) %>
+    2| <%- include("../partials/menu") %>
+    3| 
+    4| <div class="jumbotron jumbotron-fluid">
+
+Could not find the include file "../partials/layout-start"
+    at getIncludePath (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:183:13)
+    at includeFile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:309:19)
+    at include (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:690:16)
+    at eval (eval at compile (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:662:12), <anonymous>:8:17)
+    at index (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:692:17)
+    at tryHandleCache (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:272:36)
+    at View.exports.renderFile [as engine] (/home/art/project/library-express.js/node_modules/ejs/lib/ejs.js:489:10)
+    at View.render (/home/art/project/library-express.js/node_modules/express/lib/view.js:135:8)
+    at tryRender (/home/art/project/library-express.js/node_modules/express/lib/application.js:640:10)
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:592:3)
+Error: Failed to lookup view "book/view" in views directory "/home/art/project/library-express.js/views"
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/art/project/library-express.js/node_modules/express/lib/response.js:1012:7)
+    at /home/art/project/library-express.js/routes/books.js:44:13
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:365:14)
+Error: Failed to lookup view "book/view" in views directory "/home/art/project/library-express.js/views"
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/art/project/library-express.js/node_modules/express/lib/response.js:1012:7)
+    at /home/art/project/library-express.js/routes/books.js:44:13
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:365:14)
+Error: Failed to lookup view "book/view" in views directory "/home/art/project/library-express.js/views"
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/art/project/library-express.js/node_modules/express/lib/response.js:1012:7)
+    at /home/art/project/library-express.js/routes/books.js:44:13
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:365:14)
+Error: Failed to lookup view "book/update" in views directory "/home/art/project/library-express.js/views"
+    at Function.render (/home/art/project/library-express.js/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/art/project/library-express.js/node_modules/express/lib/response.js:1012:7)
+    at /home/art/project/library-express.js/routes/books.js:59:13
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/art/project/library-express.js/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/art/project/library-express.js/node_modules/express/lib/router/layer.js:95:5)
+    at /home/art/project/library-express.js/node_modules/express/lib/router/index.js:281:22
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/art/project/library-express.js/node_modules/express/lib/router/index.js:365:14)

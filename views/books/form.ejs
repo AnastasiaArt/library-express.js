@@ -1,0 +1,34 @@
+<form method="POST" class="mt-5 row" >
+    <div class="form-group col-sm-6">
+        <label for="inputTitle">Заголовок</label>
+        <input type="text"
+               value="<%= book.title %>"
+               name="title"
+               class="form-control"
+               placeholder="Введите заголовок книги"
+               id="inputTitle">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="inputTitle">Автор</label>
+        <input type="text"
+               value="<%= book.authors %>"
+               name="title"
+               class="form-control"
+               placeholder="Введите автора книги"
+               id="inputTitle">
+    </div>
+    <div class="form-group col-12">
+        <label for="inputDesc">Описание</label>
+        <textarea
+                rows="3"
+                name="desc"
+                class="form-control"
+                id="inputDesc"
+                placeholder="Краткое описание книги"
+        ><%= book.description %></textarea>
+    </div>
+
+    <div class="form-group text-right ml-sm-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>
