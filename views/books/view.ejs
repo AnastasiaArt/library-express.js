@@ -7,9 +7,9 @@
     <div class="col-sm-8">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><%= book.title %></h5>
-                <p class="card-text"><%= book.description %>.</p>
-                <p class="card-text"><%= book.authors %>.</p>
+                <h5 class="card-title"><b>Заголовок:</b><%= book.title %></h5>
+                <p class="card-text"><b>Краткое описание:</b> <%= book.description %>.</p>
+                <p class="card-text"><b>Автор:</b><%= book.authors %>.</p>
 
                 <div class="text-right">
                     <a class="btn btn-sm btn-primary" href="/books/update/<%= book.id %>">

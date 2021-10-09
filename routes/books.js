@@ -65,11 +65,14 @@ router.get('/update/:id', (req, res) => {
 router.post('/update/:id', (req, res) => {
     const {books} = store;
     const {id} = req.params;
+    const {desc, title, authors} = req.body;
     const idx = books.findIndex(el => el.id === id);
     if (idx !== -1) {
         books[idx] = {
             ...books[idx],
-            ...req.body
+            title,
+            authors,
+            ...{description: desc},
         };
         res.redirect(`/books/${id}`);
     } else {
