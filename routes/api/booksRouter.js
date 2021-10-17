@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../models/Book');
-const Api404Error = require('../models/errors/Api404Error');
-const httpStatusCodes = require('../models/errors/httpStatusCodes');
-const fileMiddleware = require('../middleware/file');
+const {Book} = require('../../models');
+const {Api404Error} = require('../../models/errors');
+const httpStatusCodes = require('../../models/httpStatusCodes');
+const fileMiddleware = require('../../middleware/file');
 
 const store = {
     books: [
