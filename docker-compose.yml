@@ -1,0 +1,33 @@
+version: "3.2"
+services:
+  redis:
+    image: redis:alpine
+    volumes:
+      - ./data/redis:/data
+
+  counter:
+    build: ./counter
+
+    ports:
+      - 9000:3000
+    environment:
+      - PORT=9000
+      - REDIS_URL=redis
+    links:
+      - redis
+
+  app:
+    restart: always
+    build: .
+
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - COUNTER_PORT=9000
+      - COUNTER_URL=counter
+    links:
+      - counter
+
+volumes:
+  logs_data: {}
