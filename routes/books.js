@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {Book} = require("../models");
-
+const axios = require('axios').default;
+const {handleAxiosError, handleUnexpectedError}=require('axios');
+const COUNTER_API_URL = `http://${process.env.COUNTER_URL || 'localhost'}:${process.env.COUNTER_PORT || '8080'}/counter`;
 const store = {
     books: [
         new Book('title1', 'dest1', 'author1', 'filename', 'fileBook', 'fileCover'),
@@ -32,16 +34,26 @@ router.post('/create', (req, res) => {
     res.redirect('/books')
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     const {books} = store;
     const {id} = req.params;
     const idx = books.findIndex(el => el.id === id);
 
     if (idx !== -1) {
-        res.render("books/view", {
-            title: "Общая информация по книге",
-            book: books[idx],
-        });
+        try {
+
+           const {data}= await axios.post(`${COUNTER_API_URL}/1/cnt`);
+            res.render("books/view", {
+                title: "Общая информация по книге",
+                book: books[idx],
+                counter: data.counter || 0,
+            });
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                console.error(error);
+            }
+            res.status(500).json({ error });
+        }
     } else {
         res.status(404).redirect('/404');
     }
