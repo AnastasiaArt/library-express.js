@@ -1,0 +1,39 @@
+use library
+
+// создать коллекцию из 2 книг
+createCollectionBooks() {
+    try {
+       db.books.insertMany( [
+          { _id: 1, title: "First book", description: "1", authors: "First author" },
+          { _id: 1, title: "Second book", description: "2", authors: "Second author" },
+       ] );
+    } catch (e) {
+       print (e);
+    }
+}
+
+// найти книгу в коллекции books по полю title
+findBook(title) {
+    try {
+        db.books.find( { title } )
+    } catch (e) {
+       print (e);
+    }
+}
+
+// запрос для редактирования данных
+updateBook(id, desc, authors) {
+    try {
+     db.books.updateOne(
+        { _id: id },
+        {
+          $set: { "description": desc, authors },
+          $currentDate: { lastModified: true }
+        }
+     )
+    } catch (e) {
+       print (e);
+    }
+}
+
+
