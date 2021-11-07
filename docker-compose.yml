@@ -16,6 +16,28 @@ services:
     links:
       - redis
 
+  mongodb:
+    image: mongo
+    restart: always
+    expose:
+      - 27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME:-root}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD:-password}
+      - MONGO_INITDB_DATABASE=${DB_NAME:-books_database}
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${DB_USERNAME:-root}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${DB_PASSWORD:-password}
+    depends_on:
+      - mongodb
+
   app:
     restart: always
     build: .
@@ -26,8 +48,14 @@ services:
       - PORT=3000
       - COUNTER_PORT=9000
       - COUNTER_URL=counter
+      - DB_USERNAME=${DB_USERNAME:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-password}
+      - DB_NAME=${DB_NAME:-books_database}
+      - DB_HOST=mongodb://mongodb:27017
     links:
       - counter
+    depends_on:
+      - mongodb
 
 volumes:
   logs_data: {}
