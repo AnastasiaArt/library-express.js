@@ -1,24 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const {Book} = require('../../models');
+const Book = require('../../models/Book');
 const {Api404Error} = require('../../models/errors');
 const httpStatusCodes = require('../../models/httpStatusCodes');
 const fileMiddleware = require('../../middleware/file');
-
-const store = {
-    books: [
-        new Book('title1', 'dest1', 'author1', 'filename', 'fileBook', 'fileCover'),
-        new Book('title2', 'dest2', 'author2', 'filename', 'fileBook', 'fileCover'),
-    ],
-}
 
 /**
  * Get all books
  * @return Array<new Book>
  */
-router.get('/', (req, res) => {
-    const {books} = store;
-    res.json(books);
+router.get('/', async (req, res) => {
+    try {
+        const books = await Book.find().select('-__v');
+        res.json(books);
+    } catch (e) {
+        console.error(e)
+        res.status(500).json(e);
+    }
 });
 
 /**
@@ -26,14 +24,12 @@ router.get('/', (req, res) => {
  * @param id string
  * @return Object<new Book>
  */
-router.get('/:id', (req, res) => {
-    const {books} = store;
+router.get('/:id', async (req, res) => {
     const {id} = req.params;
-    const idx = books.findIndex(el => el.id === id);
-
-    if (idx !== -1) {
-        res.json(books[idx]);
-    } else {
+    try {
+        const book = await Book.findById(id).select('-__v');
+        res.json(book);
+    } catch(e) {
         const err = new Api404Error('Book is not found');
         res.json(err);
     }
@@ -44,14 +40,21 @@ router.get('/:id', (req, res) => {
  * @param title, desc, authors string, fileBook multiform/data file
  * @return Object<new Book>
  */
-router.post('/', fileMiddleware.single('fileBook'), (req, res) => {
-    const {books} = store;
-    const {title, desc, authors, favorite} = req.body;
+router.post('/', fileMiddleware.single('fileBook'), async (req, res) => {
+    const {title, desc, authors} = req.body;
+    let newBook;
     if (req.file) {
         const {path, filename} = req.file;
-        const newBook = new Book(title, desc, authors, filename, "",path, favorite);
-        books.push(newBook);
+       newBook = new Book({title, description: desc, authors, fileName: filename, fileBook: path});
+    } else {
+        newBook = new Book({title, description: desc, authors})
+    }
+    try {
+        await newBook.save();
         res.status(httpStatusCodes.OK).json(newBook);
+    } catch (e) {
+        console.error(e);
+        res.status(500).json(e);
     }
 });
 
@@ -60,23 +63,19 @@ router.post('/', fileMiddleware.single('fileBook'), (req, res) => {
  * @param id string, title, desc, authors string, fileBook multiform/data file
  * @return Object<new Book>
  */
-router.put('/:id', fileMiddleware.single('fileBook'), (req, res) => {
-    const {books} = store;
+router.put('/:id', fileMiddleware.single('fileBook'), async (req, res) => {
     const {id} = req.params;
-    const idx = books.findIndex(el => el.id === id);
-
-    if (idx !== -1) {
-        books[idx] = {
-            ...books[idx],
-            ...req.body
-        };
+    let book;
+    try {
         if (req.file) {
             const {path, filename} = req.file;
-            books[idx].fileName = filename;
-            books[idx].fileBook = path;
+            book = {...req.body, fileName: filename, fileBook: path};
+        } else {
+            book = {...req.body}
         }
-        res.json(books[idx]);
-    } else {
+        const newBook = await Book.findByIdAndUpdate(id, book);
+        res.json(newBook);
+    } catch (e) {
         const err = new Api404Error();
         res.json(err);
     }
@@ -87,15 +86,12 @@ router.put('/:id', fileMiddleware.single('fileBook'), (req, res) => {
  * @param id string
  * @return string
  */
-router.delete('/:id', (req, res) => {
-    const {books} = store;
+router.delete('/:id', async (req, res) => {
     const {id} = req.params;
-    const idx = books.findIndex(el => el.id === id);
-
-    if (idx !== -1) {
-        books.splice(idx, 1);
+    try {
+        await Book.deleteOne({_id: id});
         res.json('ok');
-    } else {
+    } catch {
         const err = new Api404Error();
         res.json(err);
     }
@@ -106,19 +102,17 @@ router.delete('/:id', (req, res) => {
  * @param id string
  * @return file
  */
-router.get('/:id/download', (req, res) => {
-    const {books} = store;
+router.get('/:id/download', async (req, res) => {
     const {id} = req.params;
-    const book = books.find(i => i.id === id);
-
-    if (!!book) {
-        res.download(__dirname + `/../${book.fileBook}`, `${book.fileName}`, err => {
-            if (err) {
-                const err = new Api404Error('Book is not found');
-                res.json(err);
-            }
-        });
-    } else {
+    try {
+        const book = await Book.findById(id)
+            res.download(__dirname + `/../${book.fileBook}`, `${book.fileName}`, err => {
+                if (err) {
+                    const err = new Api404Error('Book is not found');
+                    res.json(err);
+                }
+            });
+    } catch {
         const err = new Api404Error('Book is not found');
         res.json(err);
     }

@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {User, Book} = require('../../models');
+const {User} = require('../../models');
 const httpStatusCodes = require('../../models/httpStatusCodes.js');
 const {Api401Error} = require('../../models/errors');
 
 const store = {
-    books: [
-        new Book('title1', 'dest1', 'author1', 'filename', 'fileBook', 'fileCover'),
-        new Book('title2', 'dest2', 'author2', 'filename', 'fileBook', 'fileCover'),
+    users: [
+        new User('test1@mail.ru', 'test1', 'test1'),
+        new User('test2@mail.ru', 'test2', 'test2'),
     ],
 }
 
