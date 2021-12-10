@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+    "ts": "tsc --project ./tsconfig.json && node ndtnf/ndtnf/BooksRepository.js",
+    "ts:dev": "nodemon -e ts  --exec \"npm run ts\"",
     "dev": "nodemon index.js"
   },
   "repository": {
@@ -29,7 +31,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "typescript": "^4.5.2"
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"
