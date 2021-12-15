@@ -25,7 +25,9 @@ const bookSchema = new Schema({
 const Book = model('Kniga', bookSchema);
 let BooksRepository = class BooksRepository {
     constructor() { }
-    createBook(book) {
+    createBook(data) {
+        const book = new Book(data);
+        book.save();
         return book;
     }
     getBook(id) {

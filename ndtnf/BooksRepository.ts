@@ -20,7 +20,9 @@ const Book = model('Kniga', bookSchema);
 @injectable()
 export class BooksRepository {
     constructor() {}
-    public createBook (book: Partial<IBook>): Partial<IBook> {
+    public createBook (data: Partial<IBook>): Promise<Partial<IBook>> {
+        const book = new Book(data);
+        book.save();
         return book
     }
 
