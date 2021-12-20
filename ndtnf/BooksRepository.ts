@@ -1,5 +1,5 @@
 import {IBook} from "./IBook";
-import { DeleteResult } from 'mongodb';
+import {DeleteResult} from 'mongodb';
 import {injectable} from "inversify";
 import "reflect-metadata";
 
@@ -17,25 +17,49 @@ const bookSchema = new Schema(
 );
 const Book = model('Kniga', bookSchema);
 
+interface IBooksRepository {
+    createBook(data: Partial<IBook>): Promise<Partial<IBook>>;
+
+    getBook(id: string): Promise<IBook>;
+
+    getBooks(): Promise<IBook[]>;
+
+    updateBook(id: string, fieldsToUpdate: Partial<IBook>): Promise<IBook>;
+
+    deleteBook(id: string): Promise<DeleteResult>;
+}
+
+abstract class AbstractBooksRepository implements IBooksRepository {
+    abstract createBook(data: Partial<IBook>): Promise<Partial<IBook>>;
+
+    abstract getBook(id: string): Promise<IBook>;
+
+    abstract getBooks(): Promise<IBook[]>;
+
+    abstract updateBook(id: string, fieldsToUpdate: Partial<IBook>): Promise<IBook>;
+
+    abstract deleteBook(id: string): Promise<DeleteResult>;
+}
+
 @injectable()
-export class BooksRepository {
-    constructor() {}
-    public createBook (data: Partial<IBook>): Promise<Partial<IBook>> {
+export class BooksRepository extends AbstractBooksRepository {
+    constructor() {
+        super();
+    }
+
+    createBook(data: Partial<IBook>): Promise<Partial<IBook>> {
         const book = new Book(data);
         book.save();
         return book
     }
-
-    public getBook( id: string): Promise<IBook> {
+    getBook(id: string): Promise<IBook> {
         return Book.findById(id).exec();
     }
-
-    public getBooks(): Promise<IBook[]> {
-        return  Book.find().exec();
+    getBooks(): Promise<IBook[]> {
+        return Book.find().exec();
     }
-
-    public updateBook(id: string, fieldsToUpdate: Partial<IBook>): Promise<IBook> {
-        return Book.findByIdAndUpdate(id, fieldsToUpdate, { new: true })
+    updateBook(id: string, fieldsToUpdate: Partial<IBook>): Promise<IBook> {
+        return Book.findByIdAndUpdate(id, fieldsToUpdate, {new: true})
             .then((res: IBook) => {
                 if (res === null) {
                     return console.error('Not found');
@@ -43,8 +67,7 @@ export class BooksRepository {
                 return res;
             });
     }
-
-    public deleteBook(id: string): Promise<DeleteResult> {
-        return Book.deleteOne({ _id: id }).exec();
+    deleteBook(id: string): Promise<DeleteResult> {
+        return Book.deleteOne({_id: id}).exec();
     }
 }
