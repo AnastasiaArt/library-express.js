@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "ts": "tsc --project ./tsconfig.json && node ndtnf/ndtnf/BooksRepository.js",
+    "ts": "tsc --project ./tsconfig.json && node ndtnf/js/BooksRepository.js",
     "ts:dev": "nodemon -e ts  --exec \"npm run ts\"",
     "dev": "nodemon index.js"
   },
@@ -26,8 +26,10 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "inversify": "^6.0.1",
     "mongoose": "^6.0.12",
     "multer": "^1.4.3",
+    "reflect-metadata": "^0.1.13",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../models/Book');
+// const Book = require('../models/Book');
 const axios = require('axios').default;
 const {handleAxiosError, handleUnexpectedError} = require('axios');
 const COUNTER_API_URL = `http://${process.env.COUNTER_URL || 'localhost'}:${process.env.COUNTER_PORT || '8080'}/counter`;
 
+const container = require("../container");
+const {BooksRepository} = require("../ndtnf/js/BooksRepository");
+const Book = container.get(BooksRepository);
+
+
 router.get('/', async (req, res) => {
     try {
-        const books = await Book.find();
+        const books = await Book.getBooks();
         res.render("books/index", {
             title: "Список книг",
             books: books,
@@ -26,9 +31,8 @@ router.get('/create', (req, res) => {
 
 router.post('/create', async (req, res) => {
     const {title, desc, authors } = req.body;
-    const newBook = new Book({title, description: desc, authors});
     try {
-        await newBook.save();
+        await Book.createBook({title, description: desc, authors});
         res.redirect('/books')
     } catch (e) {
         console.error(e);
@@ -38,7 +42,7 @@ router.post('/create', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const {id} = req.params;
         try {
-           const book =await Book.findById(id);
+           const book =await Book.getBook(id);
            const {data}= await axios.post(`${COUNTER_API_URL}/1/cnt`);
             res.render("books/view", {
                 title: "Общая информация по книге",
@@ -57,7 +61,7 @@ router.get('/:id', async (req, res) => {
 router.get('/update/:id', async (req, res) => {
     const {id} = req.params;
     try {
-        const book = await Book.findById(id);
+        const book = await Book.getBook(id);
         res.render("books/update", {
             title: "Редактирование книги",
             book: book,
@@ -71,7 +75,7 @@ router.post('/update/:id', async (req, res) => {
     const {id} = req.params;
     const {desc, title, authors} = req.body;
     try {
-        await Book.findByIdAndUpdate(id, {title, authors, description: desc});
+        await Book.updateBook(id, {title, authors, description: desc});
         res.redirect(`/books/${id}`);
     } catch {
         res.status(404).redirect('/404');
@@ -81,7 +85,7 @@ router.post('/update/:id', async (req, res) => {
 router.post('/delete/:id', async (req, res) => {
     const {id} = req.params;
     try {
-        await Book.deleteOne({_id: id});
+        await Book.deleteBook({_id: id});
         res.redirect(`/books`);
     } catch {
         res.status(404).redirect('/404');
