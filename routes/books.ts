@@ -1,14 +1,12 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-// const Book = require('../models/Book');
-const axios = require('axios').default;
-const {handleAxiosError, handleUnexpectedError} = require('axios');
+import axios from 'axios';
+
+import {ioc_container} from "../infrastructure/ioc_container";
+import {BooksRepository} from "../books/BooksRepository";
+const Book = ioc_container.get(BooksRepository);
+
 const COUNTER_API_URL = `http://${process.env.COUNTER_URL || 'localhost'}:${process.env.COUNTER_PORT || '8080'}/counter`;
-
-const container = require("../container");
-const {BooksRepository} = require("../ndtnf/js/BooksRepository");
-const Book = container.get(BooksRepository);
-
 
 router.get('/', async (req, res) => {
     try {
@@ -43,7 +41,7 @@ router.get('/:id', async (req, res) => {
     const {id} = req.params;
         try {
            const book =await Book.getBook(id);
-           const {data}= await axios.post(`${COUNTER_API_URL}/1/cnt`);
+           const {data}: any = await axios.post(`${COUNTER_API_URL}/1/cnt`);
             res.render("books/view", {
                 title: "Общая информация по книге",
                 book: book,
@@ -92,4 +90,4 @@ router.post('/delete/:id', async (req, res) => {
     }
 });
 
-module.exports = router;
+export const booksRouter = router;
