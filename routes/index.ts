@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -6,5 +6,4 @@ router.get('/', (req, res) => {
         title: "Главная",
     });
 });
-
-module.exports = router;
+ export const indexRouter = router;

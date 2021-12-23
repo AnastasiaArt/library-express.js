@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {User} = require('../../models');
-const httpStatusCodes = require('../../models/httpStatusCodes.js');
-const {Api401Error} = require('../../models/errors');
+import {User} from '../../users/User';
+import {httpStatusCodes} from '../../models/httpStatusCodes.js';
+import {Api401Error} from '../../models/errors/Api401Error';
 
 const store = {
     users: [
@@ -33,5 +33,4 @@ router.post('/login', (req, res) => {
     delete user.password;
     res.status(httpStatusCodes.OK).json(user);
 });
-
-module.exports = router;
+export const userApiRouter = router

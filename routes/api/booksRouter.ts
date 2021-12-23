@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const Book = require('../../models/Book');
-const {Api404Error} = require('../../models/errors');
-const httpStatusCodes = require('../../models/httpStatusCodes');
-const fileMiddleware = require('../../middleware/file');
+import express from 'express';
+export const router = express.Router();
+import {Book} from '../../infrastructure/mongoose/Book';
+import {Api404Error} from '../../models/errors/Api404Error';
+import {httpStatusCodes} from '../../models/httpStatusCodes';
+import {fileMiddleware} from '../../middleware/file';
 
 /**
  * Get all books
@@ -118,4 +118,4 @@ router.get('/:id/download', async (req, res) => {
     }
 });
 
-module.exports = router;
+export const booksApiRouter = router
